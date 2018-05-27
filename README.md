@@ -1,15 +1,15 @@
 # Deck of Cards
-## A Spark Java Project
+## A ~~Spark~~ Spring Java Project
 
 ## What is this?
 
 I was asked to do a code test for a scenario, whose text will remain anonymous (so that others do not google-search my repository).
 
-The project is written in Java; see below for class descriptions. The Main class itself is a SparkJava class which can be run once built.
+The project is written in Java; see below for class descriptions. The Main class itself is a ~~SparkJava~~ Spring Boot class which can be run once built.
 
 ## Getting Started
 
-This project is written with Maven in mind, and the Main solution is a SparkJava web server.
+This project is written with Maven in mind, and the Main solution is a Spring Boot web server.
 
 You'll need at least:
 
@@ -20,13 +20,17 @@ Nice to have:
 
 * IntelliJ IDEA
 
-Drop into a shell in the main project directory, and issue the Mojo maven compile command:
+Drop into a shell in the main project directory, and issue the maven  command:
 
 ```shell
-mvn compile exec:java
+mvn package
 ```
 
-Or, open the solution in IntelliJ IDEA, and run the "Spark Server" task. 
+Then, run the built artifact:
+
+```shell
+java -jar target/spring-carddeck-1.0.0.jar
+```
 
 ## Endpoints
 
@@ -42,20 +46,22 @@ Provided you get the solution running the following endpoints provide functional
 To get the short format, include url param `type=short`.
 
 `GET /deck/deal` - Deals a card. Output will be the card you were dealt. It will be removed from the internal instance (because it's now in the hands of a player, presumably).
+You can also specify a url param of `number=n` where `n` is the number of cards you want dealt.
 
 ## Testing
 
-Testing can be done in IntelliJ IDEA by running the "All Tests" task. I'm sure maven can do it, but ... I can't figure out how _yet_.
+TODO
 
 ## TODO
 
 * Include the Joker cards
 * Keep track of multiple decks (which can be namespaced in the url path)
 * Deal all the cards until the deck is depleted of cards
+* Tests
 
 ## License
 
-Copyright 2018 James Robert PErih
+Copyright 2018 James Robert Perih
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
