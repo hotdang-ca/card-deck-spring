@@ -7,6 +7,8 @@ I was asked to do a code test for a scenario, whose text will remain anonymous (
 
 The project is written in Java; see below for class descriptions. The Main class itself is a ~~SparkJava~~ Spring Boot class which can be run once built.
 
+The Card.java and DeckOfCards.java files are actually direct ports from my [other project](https://github.com/hotdang-ca/card-deck-spark). Application.java is specific to Spring as the main entrypoint; CardController.java is a Spring controller class describing all the routes.
+
 ## Getting Started
 
 This project is written with Maven in mind, and the Main solution is a Spring Boot web server.
